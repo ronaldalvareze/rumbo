@@ -1,6 +1,8 @@
 import express from 'express'
 import {pool} from './db.js'
 import despachadoresRoutes from './routes/despachadores.routes.js'
+import conductoresRouter from  './routes/conductores.routes.js'
+
 import indexRoutes from './routes/index.routes.js'
 
 const app = express()
