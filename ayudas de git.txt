@@ -1,0 +1,8 @@
+para colocar el git commit a tu nombre
+1. git config user.name      //das enter//
+2. te saldra usuario 
+3. ingresa git config  --global user.name "ocaso1323" //das enter en este caso ocaso es tu perfil de git//
+4. recuerda que tambien se puede con correo asi 
+5. git config user.email     //das enter//
+6.te saldra el correo que esta activo para cambiarlo al tuyo solo tienes que ingresar este comando
+7. git config user.email ap3717402@gmail.com   //das enter y listo// 
