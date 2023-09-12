@@ -13,10 +13,10 @@ app.use(express.json())
 
 
 app.use(indexRoutes)
-app.use(despachadoresRoutes)
-app.use(conductoresRoutes)
+app.use('/api' ,despachadoresRoutes)
+app.use('/api' ,conductoresRoutes)
 app.use(despachosRoutes)
-app.use(usersRoutes)
+app.use('/api' ,usersRoutes)
 
 
 
