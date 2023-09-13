@@ -15,7 +15,7 @@ router.put('/despachadores',updateDespachadores)
 router.delete('/despachadores',deleteDespachadores)
 
 
-router.delete('/despachador/id',deleteDespachador)
+router.delete('/despachador/:id',deleteDespachador)
 
 
 
