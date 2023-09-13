@@ -35,7 +35,16 @@ export const createDespachadores = async(req,res) => {
 }
 
 export const updateDespachadores = (req,res) => res.send('Actualizando Despachadores')
-export const deleteDespachadores = (req,res) => res.send('Borrando Despachadores')
+
+export const deleteDespachadores = (req, res) => res.send('Actualizando Conductores')
+
+
+export const deleteDespachador = async(req, res) => {
+    const result = await pool.query('DELETE FROM despachadores WHERE id_login = ?' , [req.params.id])
+    console.log(result);
+    res.send('Despachador Eliminado')
+
+}
 
 
 

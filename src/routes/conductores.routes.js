@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getConductores, createConductores, updateConductores, deleteConductores, getConductor } from '../controllers/conductores.controller.js';
+import { getConductores, createConductores, updateConductores, deleteConductores, getConductor, deleteConductor } from '../controllers/conductores.controller.js';
 
 const router = Router();
 
@@ -13,5 +13,10 @@ router.put('/conductores', updateConductores);
 
 
 router.delete('/conductores', deleteConductores);
+
+
+router.delete('/conductor/id', deleteConductor);
+
+
 
 export default router;

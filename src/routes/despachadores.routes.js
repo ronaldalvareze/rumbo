@@ -1,5 +1,5 @@
 import { Router } from  'express';
-import { getDespachadores,createDespachadores,updateDespachadores,deleteDespachadores, getDespachador} from '../controllers/despachadores.controller.js'
+import { getDespachadores,createDespachadores,updateDespachadores,deleteDespachadores, getDespachador, deleteDespachador} from '../controllers/despachadores.controller.js'
 
 
 const router = Router()
@@ -13,6 +13,9 @@ router.post('/despachadores',createDespachadores)
 router.put('/despachadores',updateDespachadores)
 
 router.delete('/despachadores',deleteDespachadores)
+
+
+router.delete('/despachador/id',deleteDespachador)
 
 
 

@@ -15,7 +15,7 @@ app.use(express.json())
 app.use(indexRoutes)
 app.use('/api' ,despachadoresRoutes)
 app.use('/api' ,conductoresRoutes)
-app.use(despachosRoutes)
+app.use('/api',despachosRoutes)
 app.use('/api' ,usersRoutes)
 
 

@@ -34,4 +34,13 @@ export const createConductores = async (req, res) => {
 
 
 export const updateConductores = (req, res) => res.send('Actualizando Conductores')
-export const deleteConductores = (req, res) => res.send('Borrando Conductores')
+
+export const deleteConductores = (req, res) => res.send('Actualizando Conductores')
+
+
+export const deleteConductor = async(req, res) => {
+    const [rows] = await pool.query('DELETE FROM conductores WHERE id_conductores = ?' , [req.params.id])
+    console.log(rows);
+    res.send('Conductor Eliminado')
+
+}
