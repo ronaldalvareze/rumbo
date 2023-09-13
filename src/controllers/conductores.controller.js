@@ -35,6 +35,14 @@ export const createConductores = async (req, res) => {
 
 export const updateConductores = (req, res) => res.send('Actualizando Conductores')
 
+export const updateConductor = (req,res) => {
+    const {id_conductores} = req.params
+    const {identificacion, placa_vehiculo, nombre, apellido, vehiculo_asociado, empresa, fecha_de_ingreso } = req.body
+    console.log(id_conductores, identificacion, placa_vehiculo, nombre, apellido, vehiculo_asociado, empresa, fecha_de_ingreso );
+    res.json('Resivido')
+}
+
+
 export const deleteConductores = (req, res) => res.send('Actualizando Conductores')
 
 
