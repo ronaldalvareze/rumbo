@@ -40,11 +40,9 @@ export const deleteDespachadores = (req, res) => res.send('Actualizando Conducto
 
 
 export const deleteDespachador = async(req, res) => {
-    const result = await pool.query('DELETE FROM despachadores WHERE id_login = ?' , [req.params.id])
-    console.log(result);
-    res.send('Despachador Eliminado')
-
-    if(result.affectedRows <= 0) return res.status(404).json({
+    const [result] = await pool.query('DELETE FROM despachadores WHERE id_login = ?' , [req.params.id])
+    
+    if (result.affectedRows <= 0) return res.status(404).json({
         message: 'Despachador no encontrado'
     })
 

@@ -39,11 +39,9 @@ export const deleteConductores = (req, res) => res.send('Actualizando Conductore
 
 
 export const deleteConductor = async(req, res) => {
-    const [rows] = await pool.query('DELETE FROM conductores WHERE id_conductores = ?' , [req.params.id])
-    console.log(rows);
-    res.send('Conductor Eliminado')
-
-    if(result.affectedRows <= 0) return res.status(404).json({
+    const [result] = await pool.query('DELETE FROM conductores WHERE id_conductores = ?' , [req.params.id])
+    
+    if (result.affectedRows <= 0) return res.status(404).json({
         message: 'Conductor no encontrado'
     })
 
