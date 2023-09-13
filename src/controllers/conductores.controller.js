@@ -43,4 +43,10 @@ export const deleteConductor = async(req, res) => {
     console.log(rows);
     res.send('Conductor Eliminado')
 
+    if(result.affectedRows <= 0) return res.status(404).json({
+        message: 'Conductor no encontrado'
+    })
+
+    res.sendStatus(204)
+
 }
