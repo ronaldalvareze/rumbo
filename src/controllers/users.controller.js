@@ -7,21 +7,20 @@ export const getUsers = async (req,res) =>  {
 }
 
 export const getUser = async (req,res) =>  {
-    const [rows] = await pool.query('SELECT * FROM users WHERE id_users =?',[req.params.id])
-    
-    if(rows.length <= 0) return res.status(404).json({
-        message: 'Conductor no encontrado'
-    })
-    res.json(rows[0])
+    const [rows] = await pool.query('SELECT * FROM users WHERE id_user =?', [req.params.id])
+    console.log(rows)
+    res.send('Obteniendo Ruta')
+
 }
 export const createUsers = async (req, res) => {
     const {username, second_name, email, celular, fk_id_conductores, clase_pqrs, comentario, fecha_pqrs } = req.body
     const [rows] = await pool.query('INSERT INTO users (username, second_name, email, celular, fk_id_conductores, clase_pqrs, comentario, fecha_pqrs) VALUE (?, ?, ?, ?, ?, ?, ?, ?)' , [username, second_name, email, celular, fk_id_conductores, clase_pqrs, comentario, fecha_pqrs]) 
     res.send({
-    username, 
     id: rows.insertId,
+    username, 
     second_name, 
-    email, celular,
+    email, 
+    celular,
     fk_id_conductores,
     clase_pqrs,
     comentario,
