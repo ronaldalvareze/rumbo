@@ -19,7 +19,7 @@ export const getDespachador = async(req, res) => {
 
 
     
-
+//crear despa
 export const createDespachadores = async (req,res) => {
     const {identificacion, nombre, email, contrasena, usuario, fecha_de_creacion} = req.body
     const [rows] = await pool.query('INSERT INTO despachadores (identificacion, nombre, email, contrasena, usuario, fecha_de_creacion) VALUE (?, ?, ?, ?, ?, ?)' , [identificacion, nombre, email, contrasena, usuario, fecha_de_creacion])
@@ -33,9 +33,26 @@ export const createDespachadores = async (req,res) => {
         fecha_de_creacion
      })
 }
-
+// actualizar despachadores
 export const updateDespachadores = (req,res) => res.send('Actualizando Despachadores')
 
+
+export const updateDespachador = (req,res) => {
+    const {id_login} = req.params
+    const {identificacion, nombre, email, contrasena, usuario, fecha_de_creacion} = req.body
+    console.log(identificacion, nombre, email, contrasena, usuario, fecha_de_creacion);
+    res.json('Resivido')
+}
+
+
+
+
+
+
+
+
+
+// delete despachadores
 export const deleteDespachadores = (req, res) => res.send('Actualizando Conductores')
 
 
