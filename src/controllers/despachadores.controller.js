@@ -20,9 +20,9 @@ export const getDespachador = async(req, res) => {
 
     
 
-export const createDespachadores = async(req,res) => {
+export const createDespachadores = async (req,res) => {
     const {identificacion, nombre, email, contrasena, usuario, fecha_de_creacion} = req.body
-    const [rows] = await pool.query('INSERT INTO despachadores (identificacion, nombre, email, contrasena, usuario, fecha_de_creacion) VALUE (?, ?, ?, ?, ?, ?)' , [identificacion, nombre, email, contrasena, usuario, fecha_de_creacion,])
+    const [rows] = await pool.query('INSERT INTO despachadores (identificacion, nombre, email, contrasena, usuario, fecha_de_creacion) VALUE (?, ?, ?, ?, ?, ?)' , [identificacion, nombre, email, contrasena, usuario, fecha_de_creacion])
     res.send({
         id: rows.insertId,
         identificacion,
