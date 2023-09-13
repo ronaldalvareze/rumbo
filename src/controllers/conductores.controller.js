@@ -35,10 +35,13 @@ export const createConductores = async (req, res) => {
 
 export const updateConductores = (req, res) => res.send('Actualizando Conductores')
 
-export const updateConductor = (req,res) => {
+export const updateConductor = async (req,res) => {
     const {id_conductores} = req.params
-    const {identificacion, placa_vehiculo, nombre, apellido, vehiculo_asociado, empresa, fecha_de_ingreso } = req.body
-    console.log(id_conductores, identificacion, placa_vehiculo, nombre, apellido, vehiculo_asociado, empresa, fecha_de_ingreso );
+    const {identificacion, placa_vehiculo, nombre, apellido, vehiculo_asociado, empresa, fecha_de_ingreso} = req.body
+    const [result] = await pool.query('UPDATE despachador SET identificacion = ?, placa_vehiculo = ?, nombre = ?, apellido = ?, vehiculo_asociado = ?, empresa = ?, fecha_de_ingreso = ?', [identificacion, placa_vehiculo, nombre, apellido, vehiculo_asociado, empresa, fecha_de_ingreso])
+
+    console.log(result);
+    
     res.json('Resivido')
 }
 
