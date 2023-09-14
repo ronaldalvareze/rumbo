@@ -2,19 +2,32 @@ import { json } from 'express'
 import { pool } from '../db.js'
 
 export const getConductores =async (req, res) => {
-    const [rows] = await pool.query('SELECT * FROM conductores')
+    try{
+        throw new Error('Mi error')
+        const [rows] = await pool.query('SELECT * FROM conductores')
     res.json(rows)
+    } catch (error) {
+        return res.status(500).json({
+            message:'Algo va mal'
+        })
+    }
 }
 
-
 export const getConductor = async(req, res) => {
-    const [rows] =await pool.query('SELECT * FROM conductores WHERE id_conductores = ?', [req.params.id])
+    try {
+        const [rows] =await pool.query('SELECT * FROM conductores WHERE     id_conductores = ?', [req.params.id]);
     
     
-    if(rows.length <= 0) return res.status(404).json({
-        message: 'Conductor no encontrado'
-    })
-    res.json(rows[0])
+        if(rows.length <= 0) return res.status(404).json({
+            message: 'Conductor no encontrado'
+            });
+        res.json(rows[0])
+    } catch (error) {
+        return res.status(500).json({
+        message: "Algo va mal"
+        })
+    }
+
 }
 
 
@@ -48,14 +61,14 @@ export const updateConductor = async (req,res) => {
     fecha_de_ingreso
 } = req.body;
 
-const [result] = await pool.query('UPDATE conductores SET identificacion = ?,  placa_vehiculo = ?, nombre = ?, apellido = ?, vehiculo_asociado = ?, empresa = ?, fecha_de_ingreso = ?',[
+const [result] = await pool.query('UPDATE conductores SET identificacion = IFNULL(?, identificacion),  placa_vehiculo = IFNULL(?, placa_vehiculo ), nombre = IFNULL(?, nombre), apellido = IFNULL(?, apellido), vehiculo_asociado = IFNULL(?, vehiculo_asociado), empresa = IFNULL(?, empresa), fecha_de_ingreso = IFNULL(?, fecha_de_ingreso)',[
 identificacion, placa_vehiculo,nombre, apellido, vehiculo_asociado, empresa,fecha_de_ingreso, id])
 
 if (result.affectedRows === 0) return res.status(404),json({
         message: 'Conductor no encontrado'
 })
 
-const [rows] = await pool.query('SELECT * FROM consductores WHERE id_conductores = ?',[id])
+const [rows] = await pool.query('SELECT * FROM conductores WHERE id_conductores = ?',[id])
 
 res.json(rows[0])
 }
