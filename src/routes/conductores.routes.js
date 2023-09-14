@@ -5,17 +5,18 @@ const router = Router();
 
 router.get('/conductores', getConductores);
 
-router.get('/conductor/:id', getConductor);
+router.get('/conductores/:id', getConductor);
 
 router.post('/conductores', createConductores);
 
 router.put('/conductores', updateConductores);
-router.put('/conductor/:id', updateConductor);
+
+router.put('/conductores/:id', updateConductor);
 
 router.delete('/conductores', deleteConductores);
 
 
-router.delete('/conductor/:id', deleteConductor);
+router.delete('/conductores/:id', deleteConductor);
 
 
 

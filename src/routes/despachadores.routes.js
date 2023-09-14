@@ -6,17 +6,18 @@ const router = Router()
 
 router.get('/despachadores',getDespachadores)
 
-router.get('/despachador/:id',getDespachador)
+router.get('/despachadores/:id',getDespachador)
 
 router.post('/despachadores',createDespachadores)
 
 router.put('/despachadores',updateDespachadores)
-router.put('/despachador/:id',updateDespachador)
+
+router.put('/despachadores/:id',updateDespachador)
 
 router.delete('/despachadores',deleteDespachadores)
 
 
-router.delete('/despachador/:id',deleteDespachador)
+router.delete('/despachadores/:id',deleteDespachador)
 
 
 

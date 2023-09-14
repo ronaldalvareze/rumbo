@@ -22,7 +22,7 @@ export const getDespachador = async(req, res) => {
 //crear despachadores
 export const createDespachadores = async (req,res) => {
     const {identificacion, nombre, email, contrasena, usuario, fecha_de_creacion} = req.body
-    const [rows] = await pool.query('INSERT INTO despachadores (identificacion, nombre, email, contrasena, usuario, fecha_de_creacion) VALUE (?, ?, ?, ?, ?, ?)' , [identificacion, nombre, email, contrasena, usuario, fecha_de_creacion])
+    const [rows] = await pool.query('INSERT INTO despachadores (identificacion, nombre, email, contrasena, usuario, fecha_de_creacion) VALUES (?, ?, ?, ?, ?, ?)' , [identificacion, nombre, email, contrasena, usuario, fecha_de_creacion])
     res.send({
         id: rows.insertId,
         identificacion,
@@ -36,16 +36,27 @@ export const createDespachadores = async (req,res) => {
 // actualizar despachadores
 export const updateDespachadores = (req,res) => res.send('Actualizando Despachadores')
 
-
 export const updateDespachador = async (req,res) => {
-    const {id_login} = req.params
-    const {identificacion, nombre, email, contrasena, usuario, fecha_de_creacion} = req.body
-    const [result] = await pool.query('UPDATE despachador SET identificacion = ?, nombre = ?, email = ?, contrasena = ?, usuario = ?, fecha_de_creacion = ?', [identificacion, nombre, email, contrasena, usuario, fecha_de_creacion])
+    const {id}= req.params
+    const{
+    identificacion,
+    nombre,
+    email,
+    contrasena,
+    usuario,
+    fecha_de_creacion
+} = req.body
 
-    console.log(result);
-    
-    res.json('Resivido')
+const [result] = await pool.query('UPDATE despachadores SET identificacion = ?, nombre = ?, email = ?, contrasena = ?, usuario = ?, fecha_de_creacion = ?', [identificacion, nombre, email, contrasena, usuario, fecha_de_creacion, id])
+
+if(result.affectedRows === 0 ) return res.status(404).json({
+    message: 'Despachador no encontrado'
+})
+console.log(result)
+
+res.json('recibido')
 }
+
 
 
 
