@@ -41,15 +41,14 @@ export const updateUser = async(req,res) => {
     const {id} = req.params
     const {username, second_name, email, celular, fk_id_conductores, clase_pqrs, comentario, fecha_pqrs} = req.body
 
-    const [result] = await pool.query ('UPDATE users SET username = ?, second_name = ?, email = ?, celular = ?, fk_id_conductores = ?, clase_pqrs = ?, comentario = ?, fecha_pqrs = ?', [username, second_name, email, celular, fk_id_conductores, clase_pqrs, comentario, fecha_pqrs, id])
+    const [result] = await pool.query ('UPDATE users SET username = ?, second_name = ?, email = ?, celular = ?, fk_id_conductores = ?, clase_pqrs = ?,  comentario = ?,  fecha_pqrs = ?', [username,  second_name,  email,  celular,  fk_id_conductores, clase_pqrs, comentario, fecha_pqrs])
 
-    if(result.affectedRows === 0) return res.status(404).json({
-        message: 'mensaje no encongtrado'
-    })
-    console.log(result)
+    if (result.affectedRows === 0) return res.status(404),json({
+        message: 'pqrs no encontrado'
+})
+console.log(result)
 
-    res.json('comentario recibido')
-
+res.json('Resivido')
 }
 
 

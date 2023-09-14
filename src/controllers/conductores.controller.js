@@ -52,7 +52,7 @@ const [result] = await pool.query('UPDATE conductores SET identificacion = ?,  p
 identificacion, placa_vehiculo,nombre, apellido, vehiculo_asociado, empresa,fecha_de_ingreso, id])
 
 if (result.affectedRows === 0) return res.status(404),json({
-        message: 'Empleado no encontrado'
+        message: 'Conductor no encontrado'
 })
 console.log(result)
 
