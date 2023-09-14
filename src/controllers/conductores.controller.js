@@ -54,9 +54,10 @@ identificacion, placa_vehiculo,nombre, apellido, vehiculo_asociado, empresa,fech
 if (result.affectedRows === 0) return res.status(404),json({
         message: 'Conductor no encontrado'
 })
-console.log(result)
 
-res.json('Resivido')
+const [rows] = await pool.query('SELECT * FROM consductores WHERE id_conductores = ?',[id])
+
+res.json(rows[0])
 }
 
 

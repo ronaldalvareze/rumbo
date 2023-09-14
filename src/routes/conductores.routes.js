@@ -11,7 +11,7 @@ router.post('/conductores', createConductores);
 
 router.put('/conductores', updateConductores);
 
-router.put('/conductores/:id', updateConductor);
+router.patch('/conductores/:id', updateConductor);
 
 router.delete('/conductores', deleteConductores);
 

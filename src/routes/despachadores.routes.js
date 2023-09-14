@@ -12,7 +12,7 @@ router.post('/despachadores',createDespachadores)
 
 router.put('/despachadores',updateDespachadores)
 
-router.put('/despachadores/:id',updateDespachador)
+router.patch('/despachadores/:id',updateDespachador)
 
 router.delete('/despachadores',deleteDespachadores)
 
