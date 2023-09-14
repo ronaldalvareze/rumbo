@@ -37,4 +37,29 @@ export const createUsers = async (req, res) => {
 
 export const updateUsers = (req,res) => res.send('Actualizando Requerimiento')
 
+export const updateUser = async(req,res) => {
+    const {id} = req.params
+    const {username, second_name, email, celular, fk_id_conductores, clase_pqrs, comentario, fecha_pqrs} = req.body
+
+    const [result] = await pool.query ('UPDATE users SET username = ?, second_name = ?, email = ?, celular = ?, fk_id_conductores = ?, clase_pqrs = ?, comentario = ?, fecha_pqrs = ?', [username, second_name, email, celular, fk_id_conductores, clase_pqrs, comentario, fecha_pqrs, id])
+
+    if(result.affectedRows === 0) return res.status(404).json({
+        message: 'mensaje no encongtrado'
+    })
+    console.log(result)
+
+    res.json('comentario recibido')
+
+}
+
+
 export const deleteUsers = (req,res) => res.send('Borrando Requerimiento')
+
+export const deleteUser = async (req,res) => {
+    const [result ] = await pool.query('DELETE FROM users WHERE id_user = ?', [req.params.id])
+    if(result.affectedRows <= 0) return res.status(404).json({
+        message: 'usuario no encontrado'
+    })
+
+    res.sendStatus(204)
+}
