@@ -1,3 +1,4 @@
+import { json } from 'express'
 import { pool } from '../db.js'
 
 export const getConductores =async (req, res) => {
@@ -16,9 +17,10 @@ export const getConductor = async(req, res) => {
     res.json(rows[0])
 }
 
+
 export const createConductores = async (req, res) => {
     const { identificacion, placa_vehiculo, nombre, apellido, vehiculo_asociado, empresa, fecha_de_ingreso } = req.body;
-    const [rows] = await pool.query('INSERT INTO conductores (identificacion, placa_vehiculo, nombre, apellido, vehiculo_asociado, empresa, fecha_de_ingreso) VALUE (?, ?, ?, ?, ?, ?, ?)', [identificacion, placa_vehiculo, nombre, apellido, vehiculo_asociado, empresa, fecha_de_ingreso])
+    const [rows] = await pool.query('INSERT INTO conductores (identificacion, placa_vehiculo, nombre, apellido, vehiculo_asociado, empresa, fecha_de_ingreso) VALUES (?, ?, ?, ?, ?, ?, ?)', [identificacion, placa_vehiculo, nombre, apellido, vehiculo_asociado, empresa, fecha_de_ingreso])
     res.send({
         id: rows.insertId,
         identificacion, 
@@ -36,17 +38,29 @@ export const createConductores = async (req, res) => {
 export const updateConductores = (req, res) => res.send('Actualizando Conductores')
 
 export const updateConductor = async (req,res) => {
-    const {id_conductores} = req.params
-    const {identificacion, placa_vehiculo, nombre, apellido, vehiculo_asociado, empresa, fecha_de_ingreso} = req.body
-    const [result] = await pool.query('UPDATE despachador SET identificacion = ?, placa_vehiculo = ?, nombre = ?, apellido = ?, vehiculo_asociado = ?, empresa = ?, fecha_de_ingreso = ?', [identificacion, placa_vehiculo, nombre, apellido, vehiculo_asociado, empresa, fecha_de_ingreso])
+    const {id}= req.params;
+    const{
+    identificacion,
+    placa_vehiculo, 
+    nombre, apellido, 
+    vehiculo_asociado, 
+    empresa, 
+    fecha_de_ingreso
+} = req.body;
 
-    console.log(result);
-    
-    res.json('Resivido')
+const [result] = await pool.query('UPDATE conductores SET identificacion = ?,  placa_vehiculo = ?, nombre = ?, apellido = ?, vehiculo_asociado = ?, empresa = ?, fecha_de_ingreso = ?',[
+identificacion, placa_vehiculo,nombre, apellido, vehiculo_asociado, empresa,fecha_de_ingreso, id])
+
+if (result.affectedRows === 0) return res.status(404),json({
+        message: 'Empleado no encontrado'
+})
+console.log(result)
+
+res.json('Resivido')
 }
 
 
-export const deleteConductores = (req, res) => res.send('Actualizando Conductores')
+export const deleteConductores = (req, res) => res.send('Borrando Conductores')
 
 
 export const deleteConductor = async(req, res) => {
