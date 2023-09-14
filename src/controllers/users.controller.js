@@ -9,7 +9,7 @@ export const getUsers = async (req,res) =>  {
 export const getUser = async (req,res) =>  {
     const [rows] = await pool.query('SELECT * FROM users WHERE id_user =?', [req.params.id])
     console.log(rows)
-    res.send('Obteniendo Ruta')
+    res.json(rows[0])
 
 }
 export const createUsers = async (req, res) => {

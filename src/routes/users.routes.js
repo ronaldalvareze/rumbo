@@ -5,9 +5,13 @@ import { getUsers,createUsers,updateUsers,deleteUsers,getUser} from '../controll
 const router = Router()
 
 router.get('/users',getUsers)
+
 router.get('/user/:id', getUser)
+
 router.post('/users',createUsers)
+
 router.put('/users',updateUsers)
+
 router.delete('/users' ,deleteUsers)
 
 

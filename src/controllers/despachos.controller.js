@@ -5,9 +5,15 @@ export const getDespachos =  async(req,res) => {
     res.json(rows)
 }
 
-export const getDespacho = (req,res) => {
-  console.log(req.params.id)
-    res.send('aja')
+export const getDespacho = async(req,res) => {
+  const [rows] = await pool.query('SELECT * FROM despachos WHERE id_despacho = ?', [req.params.id])
+  
+  if(rows.length <= 0) return res.status(404).json({
+    message: 'despachador no encontrado'
+
+  })
+  
+  res.send(rows[0])
 }
 
 

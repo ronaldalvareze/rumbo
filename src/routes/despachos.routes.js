@@ -6,7 +6,7 @@ const router = Router()
 
 router.get('/despachos',getDespachos)
 
-router.get('/despacho/:id',getDespacho)
+router.get('/despachos/:id',getDespacho)
 
 router.post('/despachos',createDespachos)
 
