@@ -18,7 +18,7 @@ app.use('/api' ,conductoresRoutes)
 app.use('/api',despachosRoutes)
 app.use('/api' ,usersRoutes)
 
-app.use ((req, res, next) => {
+app.use ((req,res,next) => {
     res.status(404).json({
         message: 'EndPoint no Encontrado'
     })
