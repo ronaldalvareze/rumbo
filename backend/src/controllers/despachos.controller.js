@@ -1,6 +1,6 @@
 export const getDespachos = async (req, res) => {
   try {
-    throw new Error('mi error')
+    //throw new Error('mi error')
     const [rows] = await pool.query('SELECT * FROM despachos');
     res.json(rows);
   } catch (error) {

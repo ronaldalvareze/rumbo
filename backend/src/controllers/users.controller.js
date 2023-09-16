@@ -2,7 +2,7 @@ import { pool } from '../db.js';
 
 export const getUsers = async (req, res) => {
   try {
-    throw new Error('mi error')
+    //throw new Error('mi error')
     const [rows] = await pool.query('SELECT * FROM users');
     res.json(rows);
   } catch (error) {
