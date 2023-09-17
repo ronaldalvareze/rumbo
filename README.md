@@ -1,7 +1,7 @@
 <!-- Banner RUMBO -->
 <div align="center">
 	<img height="200px" src="public/img/sena2023.png" alt="Logo SENA"/>
-  <img height="200px" src="public/img/logo.jpg" alt="Logo RUMBO"/>
+  <img height="200px" src="public/img/logo.svg" alt="Logo RUMBO"/>
 </div>
 <br>
 <div align="center">
