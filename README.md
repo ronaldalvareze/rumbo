@@ -28,7 +28,9 @@
 <!-- Información principal -->
 # RUMBO
 
-RUMBO will be a web application built with new and widely used technologies in the world of developers, so it will be a multifunctional application that can be seen on multiple known platforms and devices; as well as a very dynamic and intuitive interface will also be taken into account given that it will have icons and figures for easy recognition by users.
+RUMBO 
+It is a WED application created to present in a modern way all the urban, suburban and rural routes of our municipality in real time; as well as the drivers and the company to which they belong.
+And most importantly, you can congratulate filing a claim.
 
 <!-- Stack utilizado -->
 ## Tech Stack
