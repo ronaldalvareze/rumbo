@@ -5,7 +5,7 @@
 </div>
 <br>
 <div align="center">
-	<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=3000&pause=400&color=3BAA35&background=FFFFFF00&center=true&vCenter=true&width=435&lines=bienvenidos+a+RUMBO+una aplicacion;para+que no te preocupes;por+buscar tu transporte;el lo hara por ti;un proyecto+desarrollado con+Node.js+y+React.js" alt="palabras animadas mensaje"/>
+	<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=3000&pause=400&color=3BAA35&background=FFFFFF00&center=true&vCenter=true&width=435&lines=bienvenidos+a+RUMBO+una aplicacion;para+que no te preocupes;por+buscar tu transporte;el lo hara por ti;un proyecto+desarrollado;con+Node.js+y+React.js" alt="palabras animadas mensaje"/>
 </div>
 <br>
 <div align="center">
