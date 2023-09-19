@@ -17,7 +17,7 @@
   ·
 </p>
 
-<h3 align="left">Connect with me:</h3>
+<h3 align="left">Conectado con:</h3>
 <p align="left">
 </p>
 
@@ -29,23 +29,23 @@
 # RUMBO
 
 RUMBO es una aplicacion wed creada para dar a conocer de manera moderna todas las rutas urbanas, suburbanas y rurales de nuestro municipio en tiempo real; como tambien a los conductores y  la empresa a las que pertenecen.
-y lo mas importante puedes felicitar a presentar un reclamo.
+y lo mas importante puedes felicitar o presentar un reclamo.
 
 <!-- Stack utilizado -->
 ## Tech Stack
 
-**Client:** <br>
+**Cliente:** <br>
 <a href="https://react.dev/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/react-2.svg" alt="React.js" width="40" height="40"/></a>
 <a href="https://es.redux.js.org/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/redux.svg" alt="Redux" width="40" height="40"/></a>
 <a href="https://getbootstrap.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="40" height="40"/></a>
 
-**Server:** <br>
+**Servidor:** <br>
 <a href="https://nodejs.org/es" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg" alt="Node.js" width="40" height="40"/></a>
 <a href="https://expressjs.com/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/express-fashion-stores.svg" alt="Express" width="40" height="40"/></a>
 <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/mysql-logo.svg" alt="MySql" width="45" height="40"/></a>
 <a href="https://www.mongodb.com/es" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/mongodb-icon-1.svg" alt="MongoDB" width="40" height="40"/></a>
 
-## Deployment
+## Desarrollo
 
 ![NPM](https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white)
 
