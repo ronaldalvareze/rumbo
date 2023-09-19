@@ -5,7 +5,7 @@
 </div>
 <br>
 <div align="center">
-	<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=3000&pause=400&color=3BAA35&background=FFFFFF00&center=true&vCenter=true&width=435&lines=Welcome+to+SAGA;A+Node.js+and+React.js+project" alt="Typing SVG SAGA"/>
+	<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&duration=3000&pause=400&color=3BAA35&background=FFFFFF00&center=true&vCenter=true&width=435&lines=Welcome+to+SAGA;A+Node.js+and+React.js+project" alt="#"/>
 </div>
 <br>
 <div align="center">
@@ -13,7 +13,7 @@
 
 <p>
   ·
-  <a href="/docs/readme_es.md">Español</a>
+  <a href="/docs/readme_es.md">English</a>
   ·
 </p>
 
@@ -28,7 +28,8 @@
 <!-- Información principal -->
 # RUMBO
 
-RUMBO will be a web application built with new and widely used technologies in the world of developers, so it will be a multifunctional application that can be seen on multiple known platforms and devices; as well as a very dynamic and intuitive interface will also be taken into account given that it will have icons and figures for easy recognition by users.
+RUMBO es una aplicacion wed creada para dar a conocer de manera moderna todas las rutas urbanas, suburbanas y rurales de nuestro municipio en tiempo real; como tambien a los conductores y  la empresa a las que pertenecen.
+y lo mas importante puedes felicitar a presentar un reclamo.
 
 <!-- Stack utilizado -->
 ## Tech Stack
