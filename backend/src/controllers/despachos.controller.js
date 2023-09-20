@@ -1,3 +1,7 @@
+import { json } from 'express'
+import { pool } from '../db.js'
+
+
 export const getDespachos = async (req, res) => {
   try {
     //throw new Error('mi error')
@@ -88,7 +92,7 @@ export const updateDespacho = async (req, res) => {
     res.status(200).json({ message: 'Despacho updated successfully' });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Internal server error' });
+    res.status(500).json({ message: 'algo va mal' });
   }
 };
 export const deleteDespachos = (req, res) => res.send('Borrando Despachos');

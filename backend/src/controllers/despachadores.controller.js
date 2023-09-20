@@ -1,20 +1,21 @@
-import { pool } from '../db.js'
+import { json } from 'express';
+import { pool } from '../db.js';
 
-
-export const getDespachadores = async(req,res) => {
-    try{
-        //throw new Error('Mi error')
-        const [rows] = await pool.query('SELECT * FROM despachadores')
-        res.json(rows)
-    } catch (error) {
+export const getDespachadores = async (req, res) => {
+    
+    try {
+        const [rows] = await pool.query('SELECT * FROM despachadores');
+        res.json(rows);
+      } catch (error) {
+        console.error(error);
         return res.status(500).json({
-            message:'Algo va mal'
+          message: 'Algo va mal',
         })
     }
 }   
 
 
-export const getDespachador = async(req, res) => {
+export const getDespachador = async (req, res) => {
     try {
         const [rows] =await pool.query('SELECT * FROM despachadores WHERE id_login = ?' , [req.params.id])
     
